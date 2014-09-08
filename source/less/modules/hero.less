@@ -37,17 +37,40 @@
     position: absolute;
     bottom: 0;
     right: 0;
+    width: 300px;
     p {
       color: #fff;
       font-size: 17px;
+      margin-top: 35px;
     }
-    p, a {
+    a {
       display: table-cell;
       vertical-align: middle;
       padding: 0 20px;
     }
     .svedp img { height: 70px; }
     .kolla img { height: 90px; }
+  }
+}
+
+@media (max-width: 600px) {
+  #module-hero {
+    .badges {
+      width: 100%;
+      text-align: center;
+      div { display: inline-block; }
+      p { font-size: 14px; }
+      .svedp img { height: 60px; }
+      .kolla img { height: 70px; }
+    }
+  }
+}
+
+@media (min-width: 601px) {
+  #module-hero {
+    .badges {
+      p, div { float: left; }
+    }
   }
 }
 
