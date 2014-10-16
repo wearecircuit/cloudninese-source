@@ -11,7 +11,7 @@ var clean = require('gulp-clean');
 var settings = {
     build: './build',
     source: './source',
-    port: 1337
+    port: 8080
 };
 
 gulp.task('clean', function () {

@@ -4,8 +4,6 @@ var NoiseWalker = require('./noisewalker/nw');
 var smoothScroll = require('./smooth-scroll.min');
 var ImageGrid = require('./imagegrid');
 
-var noise = new Canvasrunner(NoiseWalker, settings.noisewalker);
-
 //console.log(Canvasrunner);
 
 
@@ -13,6 +11,10 @@ var elements = {
     'hero' : document.getElementById('module-hero'),
     'letter' : document.getElementById('letter')
 };
+
+if(elements.hero){
+    var noise = new Canvasrunner(NoiseWalker, settings.noisewalker);
+}
 
 function supports_gradients() {
     /**
@@ -83,8 +85,10 @@ var colorThree = arrayToRGB(settings.colors[color][3]);
 //elements.letter.style.backgroundColor = colorThree;
 
 //if(supports_gradients()){
-    elements.hero.style.backgroundImage = gradientPrefix + 'linear-gradient('
-    + orientation + ', ' + colorTwo + ', ' + colorOne + ')';
+    if(elements.hero){
+        elements.hero.style.backgroundImage = gradientPrefix + 'linear-gradient('
+        + orientation + ', ' + colorTwo + ', ' + colorOne + ')';
+    }
 //}
 
 //elements.letter.style.backgroundColor = colorOne;
